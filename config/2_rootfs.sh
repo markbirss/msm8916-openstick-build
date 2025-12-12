@@ -15,8 +15,7 @@ sleep 5
 mount /output/working/rootfs_base.ext4 /rootfs
 
 # debootstrap bullseye
-#export DEBIAN_VERSION=bookworm
-#debootstrap --arch=arm64 --include openssh-server,nano,wget,initramfs-tools,cron,wpasupplicant,init,dbus,dnsmasq,ca-certificates,gawk $DEBIAN_VERSION /rootfs http://deb.debian.org/debian/
-debootstrap --arch=arm64 --include=openssh-server,nano,wget,initramfs-tools,cron,wpasupplicant,init,dbus,dnsmasq,ca-certificates,gawk noble /rootfs http://ports.ubuntu.com/ubuntu-ports
+export DEBIAN_VERSION=bookworm
+debootstrap --arch=arm64 --include openssh-server,nano,wget,initramfs-tools,cron,wpasupplicant,init,dbus,dnsmasq,ca-certificates,gawk $DEBIAN_VERSION /rootfs http://deb.debian.org/debian/
 
 umount /rootfs
